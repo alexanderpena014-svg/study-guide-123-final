@@ -1,5 +1,8 @@
 import static org.junit.Assert.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.jupiter.api.Test;
 
 public class FinalPracticeTest {
@@ -112,5 +115,36 @@ public class FinalPracticeTest {
                 new TreeNode(6));
 
         assertEquals(0, FinalPractice.sumOddBranchNodes(root));
+    }
+
+    //countOccurrences
+
+    @Test
+    public void countOccurrences_NullList() {
+        Map<Integer, Integer> expected = new HashMap<>();
+
+        assertEquals(expected, FinalPractice.countOccurrences(null));
+    }
+
+    @Test
+    public void countOccurrences_OneNode() {
+        ListNode head = new ListNode(7);
+
+        Map<Integer, Integer> expected = new HashMap<>();
+        expected.put(7, 1);
+
+        assertEquals(expected, FinalPractice.countOccurrences(head));
+    }
+    @Test
+    public void countOccurrences_AllSame() {
+        ListNode head =
+            new ListNode(5,
+            new ListNode(5,
+            new ListNode(5)));
+
+        Map<Integer, Integer> expected = new HashMap<>();
+        expected.put(5, 3);
+
+        assertEquals(expected, FinalPractice.countOccurrences(head));
     }
 }

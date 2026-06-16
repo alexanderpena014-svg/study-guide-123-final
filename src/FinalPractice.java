@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class FinalPractice {
     public static void main(String[] args) {
         // Feel free to call your methods here to experiment
@@ -91,5 +94,23 @@ public class FinalPractice {
         sum += sumOddBranchNodes(root.right);
 
         return sum;
+    }
+
+    public static Map<Integer, Integer> countOccurrences(ListNode head) {
+        Map<Integer, Integer> map = new HashMap<>();
+
+        ListNode curr = head;
+
+        while (curr != null) {
+            if (map.containsKey(curr.data)) {
+                map.put(curr.data, map.get(curr.data) + 1);
+            } else {
+                map.put(curr.data, 1);
+            }
+
+            curr = curr.next;
+        }
+
+        return map;
     }
 }

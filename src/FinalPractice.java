@@ -58,5 +58,20 @@ public class FinalPractice {
 
         return max;
     }
-    
+
+    public static int sumEvenLeafNodes(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        if (root.left == null && root.right == null) {
+            if (root.data % 2 == 0) {
+                return root.data;
+            } else {
+                return 0;
+            }
+        }
+        
+        return sumEvenLeafNodes(root.left) + sumEvenLeafNodes(root.right);
+    }
 }

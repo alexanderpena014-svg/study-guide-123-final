@@ -62,5 +62,25 @@ public class FinalPracticeTest {
 
         assertEquals(99, FinalPractice.largestLast3(list));
     }
-    //
+
+    //sumEvenLeafNodes
+    @Test
+    public void sumEvenLeafNodes_AllOddLeaves() {
+        TreeNode root =new TreeNode(10,
+                new TreeNode(3),
+                new TreeNode(5));
+
+        assertEquals(0, FinalPractice.sumEvenLeafNodes( root));
+    }
+
+    @Test
+    public void sumEvenLeafNodes_NullTree() {
+        assertEquals(0, FinalPractice.sumEvenLeafNodes(null));
+    }
+
+    @Test
+    public void sumEvenLeafNodes_SingleEvenLeaf() {
+        TreeNode root = new TreeNode(8);
+        assertEquals(8, FinalPractice.sumEvenLeafNodes(root));
+    }
 }

@@ -33,4 +33,30 @@ public class FinalPractice {
     }
 
     // TODO: implement the rest of the study guide AND MAKE GOOD UNIT TESTS
+
+    public static int largestLast3(ListNode head) {
+        int count = 0;
+        ListNode curr = head;
+
+        while (curr != null) {
+            count++;
+            curr = curr.next;
+        }
+
+        int start = count - 3;
+        int index = 0;
+        int max = Integer.MIN_VALUE;
+
+        curr = head;
+        while (curr != null) {
+            if (index >= start) {
+                max = Math.max(max, curr.data);
+            }
+            curr = curr.next;
+            index++;
+        }
+
+        return max;
+    }
+    
 }

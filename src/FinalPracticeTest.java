@@ -12,5 +12,55 @@ public class FinalPracticeTest {
 
     // TODO: Make more tests for oddIndexSum
 
+    //oddIndexSum
+    @Test
+    void testOddIndexSum_nullList() {
+        assertEquals(0, FinalPractice.oddIndexSum(null));
+    }
+
+    @Test
+    void testOddIndexSum_oneNode() {
+        ListNode list = new ListNode(10);
+        assertEquals(0, FinalPractice.oddIndexSum(list));
+    }
+
+    @Test
+    void testOddIndexSum_twoNodes() {
+        ListNode list = new ListNode(5, new ListNode(7));
+        assertEquals(7, FinalPractice.oddIndexSum(list));
+    }
+
     // TODO: Make thorough tests for ALL the questions on the study guide
+
+    //largestLast3
+    @Test
+    void testLargestLast3_exactlyThreeNodes() {
+        ListNode list = new ListNode(8,
+                new ListNode(3,
+                new ListNode(6)));
+
+        assertEquals(8, FinalPractice.largestLast3(list));
+    }
+
+    @Test
+    void testLargestLast3_withNegatives() {
+        ListNode list = new ListNode(-10, 
+                new ListNode(-3,
+                new ListNode(-7,
+                new ListNode(-2))));
+
+        assertEquals(-2, FinalPractice.largestLast3(list));
+    }
+
+    @Test
+    void testLargestLast3_middleOfLast3IsLargest() {
+        ListNode list = new ListNode(10,
+                new ListNode(20,
+                new ListNode(5,
+                new ListNode(99,
+                new ListNode(7)))));
+
+        assertEquals(99, FinalPractice.largestLast3(list));
+    }
+    //
 }

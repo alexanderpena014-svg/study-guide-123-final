@@ -83,4 +83,34 @@ public class FinalPracticeTest {
         TreeNode root = new TreeNode(8);
         assertEquals(8, FinalPractice.sumEvenLeafNodes(root));
     }
+
+    //sumOddBranchNodes
+    @Test
+    public void sumOddBranchNodes_SingleNodeEven() {
+        TreeNode root = new TreeNode(8);
+
+        assertEquals(0, FinalPractice.sumOddBranchNodes(root));
+    }
+
+    @Test
+    public void sumOddBranchNodes_OneOddBranch() {
+        TreeNode root =
+            new TreeNode(7,
+                new TreeNode(4),
+                null);
+
+        assertEquals(7, FinalPractice.sumOddBranchNodes(root));
+    }
+
+    @Test
+    public void sumOddBranchNodes_AllEvenBranches() {
+        TreeNode root =
+            new TreeNode(10,
+                new TreeNode(8,
+                    new TreeNode(1),
+                    new TreeNode(2)),
+                new TreeNode(6));
+
+        assertEquals(0, FinalPractice.sumOddBranchNodes(root));
+    }
 }
